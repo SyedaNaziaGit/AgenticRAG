@@ -24,7 +24,7 @@ AgenticRAG/
 └── README.md                              # Project documentation
 ```
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -51,14 +51,14 @@ AgenticRAG/
    OPENAI_API_KEY=your_openai_api_key_here
    ```
 
-## 📖 Execution Sequence
+## Execution Sequence
 
 For the best learning experience, follow the notebooks in numerical order:
 
 1. Open `1_base_rag.ipynb` to establish the baseline.
 2. Progress through `2_conditinal_retrieval.ipynb` to `5_retrival_eval_and_rewriting.ipynb` to understand individual agentic components.
 3. Run `AgenticRAG.ipynb` to test the complete multi-step autonomous workflow.
-```
+
 
 **Agentic RAG architectures** differ from **basic (traditional) retrieval architectures** primarily through the integration of **autonomous agents** that dynamically control the retrieval and generation workflow.
 
@@ -81,9 +81,3 @@ For the best learning experience, follow the notebooks in numerical order:
 * **Architectural Implementation**:
   * **Basic RAG**: Consists of a simple chunk-and-embed retriever, prompt template, and LLM call.
   * **Agentic RAG**: Requires **state definitions** (tracking question, state flags, and retrieved documents), agent function nodes, and **conditional edge logic** that routes execution dynamically based on query evaluation.
-
-
-
----
-
-💡 Would you like me to refine any specific section of this README or generate a tailored report summarizing the code implementation steps?
