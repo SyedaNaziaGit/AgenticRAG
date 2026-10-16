@@ -22,6 +22,21 @@ Each notebook adds one new capability on top of the last, so you can see exactly
 
 ---
 
+### Key Differences
+
+* **Pipeline Execution Structure**:
+  * **Basic RAG**: Follows a **fixed, linear pipeline**. Every user query automatically triggers a vector database search to fetch context, combines that context with a prompt, and sends it to the LLM to generate an answer.
+  * **Agentic RAG**: Replaces static execution with a **dynamic workflow** (often structured as a state graph using frameworks like LangGraph) with conditional branching.
+
+* **Dynamic Reasoning vs. Static Execution**:
+  * **Basic RAG**: Cannot evaluate whether a query actually requires external data or if retrieval was successful.
+  * **Agentic RAG**: Employs **autonomous agents** that use reasoning capabilities to make real-time decisions about if, where, and how to execute retrieval actions.
+
+* **Architectural Implementation**:
+  * **Basic RAG**: Consists of a simple chunk-and-embed retriever, prompt template, and LLM call.
+  * **Agentic RAG**: Requires **state definitions** (tracking question, state flags, and retrieved documents), agent function nodes, and **conditional edge logic** that routes execution dynamically based on query evaluation.
+---
+
 ##  Research Paper
 
 This project is inspired by the survey paper on Agentic RAG:
@@ -241,21 +256,3 @@ For the best learning experience, follow the notebooks in numerical order:
 ```
 ---
 
-# AgenticRAG : Building Autonomous Retrieval-Augmented Generation Pipelines
-
-This repository contains a step-by-step implementation of **Agentic RAG** systems using Python and Jupyter Notebooks. The project demonstrates the evolution from a traditional fixed retrieval pipeline to an autonomous, graph-based agent workflow capable of dynamic decision-making, tool execution, query evaluation, and rewriting.
-
-### Key Differences
-
-* **Pipeline Execution Structure**:
-  * **Basic RAG**: Follows a **fixed, linear pipeline**. Every user query automatically triggers a vector database search to fetch context, combines that context with a prompt, and sends it to the LLM to generate an answer.
-  * **Agentic RAG**: Replaces static execution with a **dynamic workflow** (often structured as a state graph using frameworks like LangGraph) with conditional branching.
-
-* **Dynamic Reasoning vs. Static Execution**:
-  * **Basic RAG**: Cannot evaluate whether a query actually requires external data or if retrieval was successful.
-  * **Agentic RAG**: Employs **autonomous agents** that use reasoning capabilities to make real-time decisions about if, where, and how to execute retrieval actions.
-
-* **Architectural Implementation**:
-  * **Basic RAG**: Consists of a simple chunk-and-embed retriever, prompt template, and LLM call.
-  * **Agentic RAG**: Requires **state definitions** (tracking question, state flags, and retrieved documents), agent function nodes, and **conditional edge logic** that routes execution dynamically based on query evaluation.
----
